@@ -37,11 +37,11 @@ def contacts():
          errors["messages"].append("An email is required")
       elif not re.match(r"[^@]+@[^@]+\.[^@]+", content["email"]):
          # regex source https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address
+         # [^@]+@[^@]+\.[^@]+
          errors["messages"].append("Email must be valid")
       if len(errors["messages"]) is not 0:
          return jsonify(errors), 400
 
-      # [^@]+@[^@]+\.[^@]+
       new_name = content["name"]
       new_email = content["email"]
       new_note = content["note"]

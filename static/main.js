@@ -1,5 +1,3 @@
-console.log('main');
-
 const httpGetAsync = (url, callback) => {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function () {
@@ -22,12 +20,10 @@ const httpDelete = (url, callback) => {
 
 const httpPost = (url, jsonData, callback) => {
   const xhr = new XMLHttpRequest();
-  debugger;
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
-      debugger;
       callback(xhr);
     }
   };
@@ -65,13 +61,9 @@ function deleteContact(clickedElem) {
 const displayErrors = (json) => {
   const errorsDiv = document.getElementById('errors');
   errorsDiv.innerText = json.messages.join('\n');
-  // json.messages.forEach(msg => {
-  //   errorsDiv.
-  // })
 };
 
 const submitAddFormCallback = (xhr) => {
-  debugger;
   console.log(xhr.responseText);
   const json = JSON.parse(xhr.responseText);
   if (xhr.status === 400) {
@@ -81,7 +73,6 @@ const submitAddFormCallback = (xhr) => {
   }
 };
 function submitAddForm() {
-  debugger;
   const name = document.getElementById('addFormName').value;
   const email = document.getElementById('addFormEmail').value;
   const note = document.getElementById('addFormNote').value;
@@ -94,8 +85,6 @@ function submitAddForm() {
   httpPost('/contacts', data, submitAddFormCallback);
   return false;
 }
-
-// document.getElementById('addContacts').onclick = handleAddContactClick;
 
 initApp();
 
