@@ -36,19 +36,8 @@ function callbackPost() {
     const json = JSON.parse(xhr.responseText);
   }
 }
-const displayContacts = (response) => {
-  console.log(response);
-};
-const initApp = () => {
-  httpGetAsync('/contacts', displayContacts);
-};
-
-const handleAddContactClick = () => {
-  console.log('clicked btn');
-};
 
 const deleteCallback = (message, code) => {
-  console.log(message);
   if (code === 200) {
     location.reload();
   }
@@ -85,8 +74,6 @@ function submitAddForm() {
   httpPost('/contacts', data, submitAddFormCallback);
   return false;
 }
-
-initApp();
 
 // modal source https://www.w3schools.com/howto/howto_css_modals.asp
 // Get the modal
