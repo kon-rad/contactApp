@@ -21,6 +21,7 @@
             <div class="col3">
               Note
             </div>
+            <!-- assumption: Adding another column for 'action' buttons is a solid UX decision -->
             <div class="col4">
               Action
             </div>
@@ -52,19 +53,22 @@
       </div>
     </div>
 
+    <!-- modal source https://www.w3schools.com/howto/howto_css_modals.asp -->
+
     <!-- The Modal -->
   <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h3>Add a contact</h3>
-      <div class="addForm">
-        <form action="/contacts" method="post">
-          <input type="text" placeholder="name" name="name">
-          <input type="text" placeholder="email" name="email">
-          <input type="text" placeholder="note" name="note">
-          <input type="submit" name="submit" label="Submit">
+      <div class="addFormContainer">
+        <h3 class="addFormTitle">Add a contact</h3>
+        <div id="errors"></div>
+        <form onsubmit="submitAddForm(); return false;" class="addForm">
+          <input type="text" placeholder="name" name="name" id="addFormName" class="addFormInput">
+          <input type="text" placeholder="email" name="email" id="addFormEmail" class="addFormInput">
+          <input type="text" placeholder="note" name="note" id="addFormNote" class="addFormInput">
+          <input type="submit" name="submit" label="Submit" class="addFormSubmit">
         </form>
       </div>
     </div>
