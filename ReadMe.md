@@ -3,5 +3,8 @@
 
 ### To run:
 
-git pull 
+git pull
+
 cd contactApp
+
+source venv/bin/activate

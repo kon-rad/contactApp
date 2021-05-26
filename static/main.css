@@ -84,10 +84,6 @@
   padding: 6px 12px;
   font-family: arial;
 }
-.tableBody {
-  /* display: flex;
-  flex-direction: row; */
-}
 .tableRowMessage {
   padding: 40px 60px;
   text-align: center;
@@ -124,6 +120,9 @@
   cursor: pointer;
   padding: 8px 6px;
   width: 200px;
+}
+.addFormErrors {
+  font-family: arial;
 }
 
 /* The Modal (background) */
