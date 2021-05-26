@@ -7,14 +7,6 @@
         </div>
         <div class="actions">
           <button class="addContactsButton" id="addContacts">Add Contact</button>
-          <div class="addForm" style="display:none">
-            <form action="">
-              <input type="text" name="name">
-              <input type="text" name="email">
-              <input type="text" name="name">
-              <input type="submit" name="submit" label="Submit">
-            </form>
-          </div>
         </div>
       </div>
       <div class="contacts">
@@ -34,11 +26,48 @@
             </div>
           </div>
           <div class="tableBody">
-            <div class="tableRow">
-              
-            </div>
+              {% for contact in contacts %}
+                <div class="tableRow">
+                    <div class="col1">
+                      {{ contact.name }}
+                    </div>
+                    <div class="col2">
+                      {{ contact.email }}
+                    </div>
+                    <div class="col3">
+                      {{ contact.note }}
+                    </div>
+                    <div class="col4">
+                      <button class="deleteButton" data-contact-id="{{ contact.id }}" onclick="deleteContact(this)">Delete</button>
+                    </div>
+                </div>
+              {% endfor %}
+              {% if contacts|length == 0 %}
+                <div class="tableRowMessage">
+                  No contacts found.
+                </div>
+              {% endif %}
           </div>
         </div>
       </div>
     </div>
+
+    <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Add a contact</h3>
+      <div class="addForm">
+        <form action="/contacts" method="post">
+          <input type="text" placeholder="name" name="name">
+          <input type="text" placeholder="email" name="email">
+          <input type="text" placeholder="note" name="note">
+          <input type="submit" name="submit" label="Submit">
+        </form>
+      </div>
+    </div>
+
+  </div>
 {% endblock content %}
