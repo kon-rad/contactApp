@@ -1,0 +1,58 @@
+:root {
+  /* source: https://coolors.co/054a91-3e7cb1-81a4cd-dbe4ee-f17300 */
+  /* CSS HEX */
+  --yale-blue: #054a91ff;
+  --steel-blue: #3e7cb1ff;
+  --iceberg: #81a4cdff;
+  --alice-blue: #dbe4eeff;
+  --heat-wave: #f17300ff;
+}
+
+.container {
+  margin: 40px;
+  font-family: arial;
+}
+
+.heading {
+  margin: 40px 0;
+  text-align: center;
+  font-size: 34;
+  font-family: arial;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 20px 60px;
+}
+.addContactsButton {
+  border-radius: 6px;
+  font-family: arial;
+  font-size: 18px;
+  background-color: var(--heat-wave);
+  color: white;
+  border: solid 1px var(--heat-wave);
+  cursor: pointer;
+}
+.contacts {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.header div {
+  border: solid 1px var(--yale-blue);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-family: arial;
+}

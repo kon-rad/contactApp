@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+      <div class="contactsHeader">
+        <div class="heading">
+          <h1 class="headingText">Welcome to Contacts App</h1>
+        </div>
+        <div class="actions">
+          <button class="addContactsButton" id="addContacts">Add Contact</button>
+          <div class="addForm" style="display:none">
+            <form action="">
+              <input type="text" name="name">
+              <input type="text" name="email">
+              <input type="text" name="name">
+              <input type="submit" name="submit" label="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="contacts">
+        <div class="table">
+          <div class="header">
+            <div class="col1">
+              Name
+            </div>
+            <div class="col2">
+              Email
+            </div>
+            <div class="col3">
+              Note
+            </div>
+            <div class="col4">
+              Action
+            </div>
+          </div>
+          <div class="tableBody">
+            <div class="tableRow">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
